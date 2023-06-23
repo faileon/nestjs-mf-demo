@@ -2,12 +2,16 @@
   "name": "@node-mf-demo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run-many --target=serve --projects=remote,host"
+  },
   "private": true,
   "dependencies": {
+    "@module-federation/node": "^0.15.1",
     "@nestjs/common": "^9.1.1",
     "@nestjs/core": "^9.1.1",
     "@nestjs/platform-express": "^9.1.1",
+    "@nestjs/serve-static": "^4.0.0",
     "axios": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
