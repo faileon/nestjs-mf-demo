@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-// @ts-ignore
-import * as remote from 'remote/Test';
 
 @Injectable()
 export class AppService {
-  getData(): { message: string } {
-    console.log(remote);
+  async getData() {
+    import('remote/Test' as any).then(container => {
+      console.log("CONTAINER", container.default());
+    })
     return { message: 'HOST' };
   }
 }

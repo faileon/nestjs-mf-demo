@@ -8,9 +8,10 @@ module.exports = composePlugins(withNx(), (config) => {
   config.plugins.push(
     new NodeFederationPlugin({
       name: 'remote',
-      library: { type: 'commonjs-module' },
+      filename: 'remote.js',
+      library: { type: "commonjs-module" },
       exposes: {
-        './Test': 'apps/remote/src/app/test.ts',
+        './Test': './src/app/test.ts',
       },
     })
   );
